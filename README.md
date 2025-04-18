@@ -119,7 +119,7 @@ Este proyecto es una maqueta frontend que incluye:
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE.md) para más detalles.
 
 ## Contacto
 
