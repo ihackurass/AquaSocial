@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Agua Bendita</title>
+    <style>
+        .main-content {
+            width: 600px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 15px 50px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .post-container {
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .post-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .badge {
+            background-color: #0099ff;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 60px;
+        }
+
+        .post-header .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-header .user-info .username {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .post-header .user-info .handle {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .post-content p,
+        .post-content-2 p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .post-content .video-thumbnail {
+            background-image: url('images/600x300.jpg');
+        }
+
+        .post-content-2 .video-thumbnail {
+            background-image: url('images/600x300_2.jpg');
+        }
+
+        .video-thumbnail .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: white;
+            background-color: rgba(255, 0, 0, 0.8);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+
+        .action-button {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .action-button i {
+            margin-right: 5px;
+        }
+
+        .action-button:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .comments-section {
+            margin-top: 15px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        .comment img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .comment .comment-content {
+            background-color: #f9f9f9;
+            padding: 8px 12px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .comment .comment-content .comment-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .comment .comment-content .comment-info {
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .new-comment {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .new-comment input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .new-comment button {
+            background-color: #112ed4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Estilos para el contenedor central */
+        .center-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Estilos para el Suggestion Sidebar */
+        .suggestions-sidebar {
+            width: 300px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .suggestions-box {
+            width: 100%;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .suggestions-box h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            width: 100%;
+            color: #333;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestion-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .suggestion-item p {
+            font-size: 14px;
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .suggestion-item span {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .spacer {
+            height: 20px;
+        }
+
+        .btn-cuadrado {
+            border-radius: 4px;
+            width: 90%;
+            padding: 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #0099ff;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cuadrado-crear-post {
+            background-color: #0099ff;
+            color: white;
+            margin: 15px;
+        }
+
+        .btn-cuadrado-crear-live {
+            background-color: white;
+            color: #0099ff;
+        }
+
+        .btn-cuadrado-crear-post:hover {
+            background-color: #007acc;
+            border-color: #007acc;
+        }
+
+        .btn-cuadrado-crear-live:hover {
+            background-color: #f1f1f1;
+            border-color: #0099ff;
+        }
+
+        .nav-menu li:last-child {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Izquierdo -->
+    <aside class="sidebar">
+        <div class="toggle">
+            <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+        </div>
+        <div class="side-inner">
+            <div class="profile">
+                <img src="images/user.jpg" alt="Image" class="img-fluid">
+                <h3 class="name">User</h3>
+                <span class="country">@UserAlias</span>
+            </div>
+            <div class="counter d-flex justify-content-center">
+                <div class="col">
+                    <strong class="number">20</strong>
+                    <span class="number-label">Posts</span>
+                </div>
+                <div class="col">
+                    <strong class="number">1.5k</strong>
+                    <span class="number-label">Seguidores</span>
+                </div>
+                <div class="col">
+                    <strong class="number">15</strong>
+                    <span class="number-label">Siguiendo</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li class="active"><a href="home.html"><span class="fas fa-home mr-3"></span>Home</a></li>
+                    <li><a href="buscar.html"><span class="fas fa-search mr-3"></span>Buscar</a></li>
+                    <li><a href="notificaciones.html"><span class="fas fa-bell mr-3"></span>Notificaciones <span
+                                class="badge">10</span></a></li>
+                    <li><a href="transmisiones.html"><span class="fas fa-broadcast-tower mr-3"></span>Transmisiones
+                            <span class="badge">1</span></a></li>
+                    <li><a href="comunidad.html"><span class="fas fa-users mr-3"></span>Comunidad</a></li>
+                    <li><a href="mi-perfil.html"><span class="fas fa-user mr-3"></span>Mi Perfil</a></li>
+                    <li>
+                        <button type="button" class="btn btn-cuadrado btn-cuadrado-crear-post" data-toggle="modal"
+                            data-target="#postModal">
+                            Crear Post
+                        </button>
+                    </li>
+                    <li>
+
+                        <button type="button" class="btn btn-cuadrado btn-cuadrado-crear-live" data-toggle="modal"
+                            data-target="#streamModal">
+                            Crear Live
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <div class="modal fade" id="streamModal" tabindex="-1" role="dialog" aria-labelledby="streamModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="streamModalLabel">Iniciar Nuevo Stream</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="streamName">Nombre del Stream</label>
+                            <input type="text" class="form-control" id="streamName" placeholder="Nombre del Stream">
+                        </div>
+                        <div class="form-group text-left">
+                            <button type="button" class="btn btn-primary" id="streamImage">
+                                <i class="fas fa-image"></i> Subir Imagen De Stream
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postModalLabel">Crear Nuevo Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="postContent" rows="3"
+                                placeholder="Escribe algo..."></textarea>
+                        </div>
+                        <div class="form-group text-left">
+                            <button type="button" class="btn btn-primary">
+                                <i class="fas fa-image"></i> Subir Imagen
+                            </button>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="receiveMoney">
+                            <label class="form-check-label" for="receiveMoney">¿Recibir dinero?</label>
+                        </div>
+                        <div class="text-right">
+                            <small class="text-muted">0 / 999</small>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tipModal" tabindex="-1" role="dialog" aria-labelledby="tipModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tipModalLabel">Enviar un regalo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- User Info -->
+                    <div class="d-flex mb-3">
+                        <img src="images/user.jpg" alt="User Avatar" class="rounded-circle" width="50" height="50">
+                        <div class="ms-3">
+                            <p class="font-weight-bold mb-0">Pedro</p>
+                            <p class="mb-0">@PedroParedes123</p>
+                            <p class="mb-0">Enviar un regalo a este usuario</p>
+                        </div>
+                    </div>
+
+                    <!-- Tip Amount -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                        <input type="number" class="form-control" value="2">
+                    </div>
+
+                    <!-- New Form -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="DNI" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Dirección" required>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Total:</span>
+                        <span>$2.09</span>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="text-center">
+                            <img src="images/yape.png" alt="Yape" width="40">
+                            <p>Yape</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="images/paypal.png" alt="PayPal" width="40">
+                            <p>Paypal</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="images/bitcoin.png" alt="Bitcoin" width="40">
+                            <p>Bitcoin</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="images/pagoefectivo.png" alt="PagoEfectivo" width="40">
+                            <p>PagoEfectivo</p>
+                        </div>
+                        <div class="text-center">
+                            <img src="images/credito.jpg" alt="Credito" width="40">
+                            <p>($11.71)</p>
+                        </div>
+                    </div>
+
+                    <p class="text-muted">Nota: Usted será redirigido a una pasarela de pago segura después de su
+                        elección.</p>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <!-- Aquí van los posts -->
+                        <div class="post-container">
+                            <div class="post-header">
+                                <img src="images/user.jpg" alt="User Avatar">
+                                <div class="user-info">
+                                    <span class="username">Pedro</span>
+                                    <span class="handle">@PedroParedes123</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p><strong>Hola</strong> a todo el mundo, deseo que le den un vistazo a esta web sobre
+                                    puntos de
+                                    abastecimiento de agua. ¡ÉCHALE UN OJO!</p>
+                                <div class="video-thumbnail">
+                                </div>
+                            </div>
+                            <div class="post-actions d-flex flex-wrap justify-content-between align-items-center">
+                                <button class="action-button btn btn-outline-primary flex-grow-1 text-center me-2 mb-2">
+                                    <i class="fas fa-heart"></i> Like 2
+                                </button>
+                                <button
+                                    class="action-button btn btn-outline-secondary flex-grow-1 text-center me-2 mb-2">
+                                    <i class="fas fa-comment"></i> Comentarios 2
+                                </button>
+
+                                <button type="button"
+                                    class="action-button btn btn-outline-success flex-grow-1 text-center mb-2"
+                                    data-toggle="modal" data-target="#tipModal">
+                                    <i class="fas fa-gift"></i> Regalar
+                                </button>
+
+                            </div>
+
+
+
+                            <div class="comments-section">
+                                <div class="comment">
+                                    <img src="images/user.jpg" alt="User Avatar">
+                                    <div class="comment-content">
+                                        <span class="comment-text">Hola, esto es un comentario para un post.</span>
+                                        <div class="comment-info">
+                                            <span>5:18 AM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-comment">
+                                <input type="text" placeholder="Escriba un mensaje...">
+                                <button><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="post-container">
+                            <div class="post-header">
+                                <img src="images/user.jpg" alt="User Avatar">
+                                <div class="user-info">
+                                    <span class="username">María</span>
+                                    <span class="handle">@MariaAgua</span>
+                                </div>
+                            </div>
+
+                            <div class="post-content-2">
+                                <p><strong>¡Buenas!</strong> Hoy les quiero compartir información sobre cómo conservar
+                                    el agua en el
+                                    hogar.</p>
+                                <div class="video-thumbnail">
+                                </div>
+                            </div>
+                            <div class="post-actions d-flex flex-wrap justify-content-between align-items-center">
+                                <button class="action-button btn btn-outline-primary flex-grow-1 text-center me-2 mb-2">
+                                    <i class="fas fa-heart"></i> Like 2
+                                </button>
+                                <button
+                                    class="action-button btn btn-outline-secondary flex-grow-1 text-center me-2 mb-2">
+                                    <i class="fas fa-comment"></i> Comentarios 2
+                                </button>
+                                <button type="button"
+                                    class="action-button btn btn-outline-success flex-grow-1 text-center mb-2"
+                                    data-toggle="modal" data-target="#tipModal">
+                                    <i class="fas fa-gift"></i> Regalar
+                                </button>
+                            </div>
+
+                            <div class="comments-section">
+                                <div class="comment">
+                                    <img src="images/user.jpg" alt="User Avatar">
+                                    <div class="comment-content">
+                                        <span class="comment-text">¡Gracias por la información!</span>
+                                        <div class="comment-info">
+                                            <span>8:45 AM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-comment">
+                                <input type="text" placeholder="Escriba un mensaje...">
+                                <button><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="suggestions-sidebar">
+                            <div class="suggestions-box">
+                                <div class="spacer"></div>
+                                <h3>Sugerencias Comunidad</h3>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>Villa Aguador</p>
+                                        <span>@AguaSalvador</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>San Juan AguAAzul</p>
+                                        <span>@Agua_Azul</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>Lima Goteador</p>
+                                        <span>@GoteandoLima</span>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <h3>Últimas Transmisiones</h3>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>@PepeJimenez</p>
+                                        <span>Inicio: 17:55 PM</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>@AlbertoMedina</p>
+                                        <span>Inicio: 15:12 PM</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-item">
+                                    <img src="images/user.jpg" alt="Avatar">
+                                    <div>
+                                        <p>@RobertoMart</p>
+                                        <span>Inicio: 15:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+<!-- Scripts -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver - Transmision</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
+</head>
+<style>
+    .badge {
+        background-color: #0099ff;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-left: 60px;
+    }
+
+    .container {
+        margin-bottom: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        border: 1px solid #ddd
+    }
+
+    .video-container {
+        background-color: #000;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ccc;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .chat-container {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: #333;
+    }
+
+    .chat-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .chat-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .chat-header .stream-info {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .chat-messages {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        padding-right: 5px;
+    }
+
+    .message {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .message span {
+        color: #0099ff;
+        font-weight: bold;
+    }
+
+    .chat-input-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .chat-input-container input {
+        flex-grow: 1;
+        background: none;
+        border: none;
+        color: #333;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .chat-input-container input::placeholder {
+        color: #888;
+    }
+
+    .chat-input-container button {
+        background-color: #0099ff;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .chat-input-container button:hover {
+        background-color: #007acc;
+    }
+
+    .logout-icon {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        color: #333;
+        font-size: 30px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .logout-icon:hover {
+        color: #0099ff;
+    }
+    .btn-cuadrado {
+        border-radius: 4px;
+        width: 90%;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #0099ff;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .btn-cuadrado-crear-post {
+        background-color: #0099ff;
+        color: white;
+        margin: 15px;
+    }
+
+    .btn-cuadrado-crear-live {
+        background-color: white;
+        color: #0099ff;
+    }
+
+    .btn-cuadrado-crear-post:hover {
+        background-color: #007acc;
+        border-color: #007acc;
+    }
+
+    .btn-cuadrado-crear-live:hover {
+        background-color: #f1f1f1;
+        border-color: #0099ff;
+    }
+
+    .nav-menu li:last-child {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="toggle">
+            <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+        </div>
+        <div class="side-inner">
+            <div class="profile">
+                <img src="images/user.jpg" alt="Image" class="img-fluid">
+                <h3 class="name">User</h3>
+                <span class="country">@UserAlias</span>
+            </div>
+            <div class="counter d-flex justify-content-center">
+                <div class="col">
+                    <strong class="number">20</strong>
+                    <span class="number-label">Posts</span>
+                </div>
+                <div class="col">
+                    <strong class="number">1.5k</strong>
+                    <span class="number-label">Seguidores</span>
+                </div>
+                <div class="col">
+                    <strong class="number">15</strong>
+                    <span class="number-label">Siguiendo</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li class="active"><a href="home.html"><span class="fas fa-home mr-3"></span>Home</a></li>
+                    <li><a href="buscar.html"><span class="fas fa-search mr-3"></span>Buscar</a></li>
+                    <li><a href="notificaciones.html"><span class="fas fa-bell mr-3"></span>Notificaciones <span class="badge">10</span></a></li>
+                    <li><a href="transmisiones.html"><span class="fas fa-broadcast-tower mr-3"></span>Transmisiones <span class="badge">1</span></a></li>
+                    <li><a href="comunidad.html"><span class="fas fa-users mr-3"></span>Comunidad</a></li>
+                    <li><a href="mi-perfil.html"><span class="fas fa-user mr-3"></span>Mi Perfil</a></li>
+                    <li>
+                        <button class="btn btn-cuadrado btn-cuadrado-crear-post">
+                            <span class="fas fa-pencil-alt mr-3"></span>Crear Post
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-cuadrado btn-cuadrado-crear-live">
+                            <span class="fas fa-video mr-3"></span>Crear Live
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <!-- Main -->
+    <main>
+        <div class="site-section">
+            <div class="container">
+                <div class="row"> <!-- Usamos g-4 para dar un espaciado entre las columnas -->
+                    <!-- Columna de Notificaciones (8/12) -->
+                    <div class="col-md-12">
+                        <h2>Nueva Sede Inaugurada | Consulte en Vivo</h2>
+                        <div class="video-container">
+                            <!-- Reemplaza 'ruta_del_video.mp4' con la URL o la ruta del archivo de video -->
+                            <video controls width="100%" height="100%">
+                                <source src="images/Inauguracion.mp4" type="video/mp4">
+                                Su navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                    
+                        <div class="chat-container">
+                            <div class="chat-header">
+                                <img src="images/user.jpg" alt="Avatar del Transmisor">
+                                <div>
+                                    <p>Transmisión de Andres Perez</p>
+                                    <p class="stream-info">3 usuarios viendo • Transmisión iniciada hace 2 horas</p>
+                                </div>
+                            </div>
+                    
+                            <div class="chat-messages">
+                                <div class="message"><span>Rodolfo G.:</span> Hola, iré muy pronto, saludos</div>
+                                <div class="message"><span>Juan Molina:</span> ¿Cuándo fue?</div>
+                                <div class="message"><span>Rodrigo Vasquez:</span> Muy buena gestión</div>
+                            </div>
+                    
+                            <div class="chat-input-container">
+                                <input type="text" placeholder="Escribe un mensaje...">
+                                <button><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
